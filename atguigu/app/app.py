@@ -1,0 +1,10 @@
+from fastapi import FastAPI
+
+from atguigu.app.exceptions.exception_handlers import register_exception_handlers
+from atguigu.app.routers import system
+
+
+app = FastAPI(description='fastapi 实测')
+app.include_router(system.router)
+
+register_exception_handlers(app)
